@@ -22,7 +22,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
-import org.jboss.as.quickstarts.cluster.hasingleton.service.ejb.ServiceAccess;
+import org.jboss.as.quickstarts.cluster.hasingleton.service.ejb.SingletonAccess;
 
 /**
  * A client to call the SingletonService via EJB remoting (AS7) to demonstrate the behaviour of the singleton.
@@ -33,7 +33,7 @@ public class SingletonServiceClient {
     /**
      * Proxy of the SLSB
      */
-    private final ServiceAccess accessBean;
+    private final SingletonAccess accessBean;
 
     /**
      * Constructor to prepare the client-context.<br/>
@@ -45,13 +45,13 @@ public class SingletonServiceClient {
         final Hashtable<String, String> jndiProperties = new Hashtable<String, String>();
         jndiProperties.put(Context.URL_PKG_PREFIXES, "org.jboss.ejb.client.naming");
         final Context context = new InitialContext(jndiProperties);
-        String lookupName = "ejb:/jboss-as-cluster-ha-singleton-service/ServiceAccessBean!" + ServiceAccess.class.getName();
+        String lookupName = "ejb:/jboss-as-cluster-ha-singleton-service/SingletonAccessBean!" + SingletonAccess.class.getName();
         System.out.println("Lookup Bean >" + lookupName);
-        accessBean = (ServiceAccess) context.lookup(lookupName);
+        accessBean = (SingletonAccess) context.lookup(lookupName);
     }
 
     private String getServiceNodeName() {
-        return accessBean.getNodeNameOfTimerService();
+        return accessBean.getInstanceId();
     }
 
     /**

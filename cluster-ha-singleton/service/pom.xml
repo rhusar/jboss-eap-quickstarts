@@ -85,7 +85,7 @@
                     <target>${maven.compiler.source}</target>
                     <generateClient>true</generateClient>
                     <clientIncludes>
-                        <clientInclude>**/ServiceAccess.class</clientInclude>
+                        <clientInclude>**/SingletonAccess.class</clientInclude>
                     </clientIncludes>
                     <archive>
                         <addMavenDescriptor>false</addMavenDescriptor>
