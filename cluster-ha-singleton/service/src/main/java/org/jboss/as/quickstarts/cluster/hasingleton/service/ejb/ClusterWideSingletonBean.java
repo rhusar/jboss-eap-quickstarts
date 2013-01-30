@@ -21,12 +21,16 @@ import javax.ejb.Remote;
 import javax.ejb.Singleton;
 import javax.ejb.Stateful;
 
+import org.jboss.ejb3.annotation.Clustered;
+
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 //@Singleton
 //@Remote
 @Stateful
+@Clustered
 public class ClusterWideSingletonBean implements ClusterWideSingleton {
 
     private static Logger LOGGER = LoggerFactory.getLogger(ClusterWideSingletonBean.class);
@@ -40,9 +44,11 @@ public class ClusterWideSingletonBean implements ClusterWideSingleton {
         LOGGER.info("YOU SHOULD SEE THIS ONLY ONCE -- init() called");
     }
 
+    private int serialNumber = 0;
+
     @Override
     public String getInstanceId() {
-        // the @yadayada of this object
-        return this.toString();
+        // the @yadayada of this object + serial
+        return this.toString() + " serial number: " + serialNumber++;
     }
 }

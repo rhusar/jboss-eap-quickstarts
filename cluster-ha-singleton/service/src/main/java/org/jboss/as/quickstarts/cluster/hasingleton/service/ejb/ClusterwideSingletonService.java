@@ -47,6 +47,14 @@ public class ClusterwideSingletonService implements Service<ClusterWideSingleton
 
     final InjectedValue<ServerEnvironment> env = new InjectedValue<ServerEnvironment>();
 
+    public void setLookedupSingletonInstance(ClusterWideSingleton lookedupSingletonInstance) {
+        this.lookedupSingletonInstance = lookedupSingletonInstance;
+    }
+
+    public ClusterwideSingletonService() {
+        LOGGER.info("ClusterwideSingletonService IS CONSTRUCTED");
+    }
+
     public ClusterWideSingleton getValue() throws IllegalStateException, IllegalArgumentException {
         if (!started.get()) {
             throw new IllegalStateException("The service '" + this.getClass().getName() + "' is not started yet!");
@@ -62,6 +70,8 @@ public class ClusterwideSingletonService implements Service<ClusterWideSingleton
         LOGGER.info("Start singleton service '" + this.getClass().getName() + "'");
 
         this.nodeName = this.env.getValue().getNodeName();
+
+        if (lookedupSingletonInstance!=null) return;
 
         try {
             InitialContext ic = new InitialContext();

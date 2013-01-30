@@ -1,3 +1,6 @@
+known issue:
+https://issues.jboss.org/browse/AS7-4755
+
 cluster-ha-singleton: A SingletonService deployed in a JAR started by SingletonStartup and accessed by an EJB
 =============================================================================================================
 Author: Wolf-Dieter Fink
