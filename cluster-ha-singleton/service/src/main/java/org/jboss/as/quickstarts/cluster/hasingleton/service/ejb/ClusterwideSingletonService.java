@@ -75,7 +75,8 @@ public class ClusterwideSingletonService implements Service<ClusterWideSingleton
 
         try {
             InitialContext ic = new InitialContext();
-            lookedupSingletonInstance = ((ClusterWideSingleton) ic.lookup("global/jboss-as-cluster-ha-singleton-service/ClusterWideSingletonBean!org.jboss.as.quickstarts.cluster.hasingleton.service.ejb.ClusterWideSingleton"));
+            lookedupSingletonInstance = ((ClusterWideSingleton) ic.lookup("global/singleton/jboss-as-cluster-ha-singleton-service-7.1.2-SNAPSHOT/ClusterWideSingletonBean!org.jboss.as.quickstarts.cluster.hasingleton.service.ejb.ClusterWideSingleton"));
+//          lookedupSingletonInstance = ((ClusterWideSingleton) ic.lookup("global/jboss-as-cluster-ha-singleton-service/ClusterWideSingletonBean!org.jboss.as.quickstarts.cluster.hasingleton.service.ejb.ClusterWideSingleton"));
             lookedupSingletonInstance.init();
 
             //.initialize("HASingleton timer @" + this.nodeName + " " + new Date());

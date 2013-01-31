@@ -39,28 +39,33 @@
         <dependency>
             <groupId>org.jboss.msc</groupId>
             <artifactId>jboss-msc</artifactId>
+            <scope>provided</scope>
         </dependency>
         <!-- Import the EJB 3.1 API, we use provided scope because we aren't 
             to use the version in JBoss AS -->
         <dependency>
             <groupId>org.jboss.spec.javax.ejb</groupId>
             <artifactId>jboss-ejb-api_3.1_spec</artifactId>
+            <scope>provided</scope>
         </dependency>
         <!-- Import the JSR-250 API, we use provided scope because we aren't 
             to use the version in JBoss AS -->
         <dependency>
             <groupId>org.jboss.spec.javax.annotation</groupId>
             <artifactId>jboss-annotations-api_1.1_spec</artifactId>
+            <scope>provided</scope>
         </dependency>
         <!-- Import JBoss AS Clustering Singleton, to allow us to create 
             a singleton service -->
         <dependency>
             <groupId>org.jboss.as</groupId>
             <artifactId>jboss-as-clustering-singleton</artifactId>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.jboss.ejb3</groupId>
             <artifactId>jboss-ejb3-ext-api</artifactId>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
@@ -106,8 +111,7 @@
                 <groupId>org.jboss.as.plugins</groupId>
                 <artifactId>jboss-as-maven-plugin</artifactId>
                 <configuration>
-                    <skip>false</skip>
-                    <filename>jboss-as-cluster-ha-singleton-service.jar</filename>
+                    <skip>true</skip>
                 </configuration>
             </plugin>
 

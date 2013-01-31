@@ -110,5 +110,7 @@
     <modules>
         <module>service</module>
         <module>client</module>
+        <module>singleton-web</module>
+        <module>singleton-ear</module>
     </modules>
 </project>
