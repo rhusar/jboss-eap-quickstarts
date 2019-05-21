@@ -3,7 +3,7 @@
     <resources>
         <resource-root path="openshift-ping-common-1.2.5.Final.jar"/>
         <resource-root path="openshift-ping-dns-1.2.3.Final-redhat-1.jar"/>
-        <resource-root path="openshift-ping-kube-1.2.3.Final-redhat-1.jar"/>
+        <resource-root path="openshift-ping-kube-1.2.5.Final.jar"/>
         <!-- Insert resources here -->
     </resources>
 
