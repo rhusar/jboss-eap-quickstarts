@@ -1,7 +1,7 @@
 <module name="org.jgroups.kubernetes" xmlns="urn:jboss:module:1.7">
 
     <resources>
-        <resource-root path="jgroups-kubernetes-1.0.13-SNAPSHOT.jar"/>
+        <resource-root path="jgroups-kubernetes-1.0.13-SNAPSHOT-fix.jar"/>
     </resources>
 
     <dependencies>
